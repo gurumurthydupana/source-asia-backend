@@ -1,5 +1,39 @@
 # Source Asia — Backend Assignment
 
+## Example Response — GET /stats
+
+```json
+{
+  "generated_at": "2026-05-25T18:09:02.996Z",
+  "window_duration_seconds": 60,
+  "global": {
+    "total_accepted": 6,
+    "total_rejected": 3
+  },
+  "users": [
+    {
+      "user_id": "test-user-1",
+      "accepted_in_window": 1,
+      "rejected_cumulative": 0,
+      "window_active": true
+    },
+    {
+      "user_id": "rl-user-1779732527521",
+      "accepted_in_window": 5,
+      "rejected_cumulative": 1,
+      "window_active": true
+    }
+  ]
+}
+```
+
+This endpoint returns per-user statistics for the rate limiter system, including:
+- accepted requests in the current 1-minute window
+- rejected requests due to rate limiting
+- active/inactive request windows
+- global accepted/rejected counts
+
+
 > **Language:** Node.js (v18+) with Express  
 > **AI Tools used:** Claude (Anthropic) — assisted with boilerplate structuring and README formatting. All logic, data model decisions, and design choices are my own.
 
